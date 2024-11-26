@@ -7,6 +7,10 @@ app = Flask(__name__)
 with open("final.json", "r") as f:
     data = json.load(f)
 
+@app.route('/')
+def home():
+    return "Welcome to the Flask API! Use /questions or /search to interact with the API."
+
 # GET 接口：获取所有问题
 @app.route('/questions', methods=['GET'])
 def get_questions():
